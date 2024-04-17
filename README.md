@@ -1,2 +1,30 @@
-# Comercio-de-venta
-Este es un programa de uso comercial donde el cliente podrá seleccionar todos los artículos que desea comprar y por ultimo le muestre el total de la cuenta que debe pagar el cliente 
+def main():
+   menu = {
+    "BAJA TACO": 4.00,
+    "BURRITO": 7.50,
+    "BOWL": 8.50,
+    "NACHOS": 11.00,
+    "QUESADILLA": 8.50,
+    "SUPER BURRITO": 8.50,
+    "SUPER QUESADILLA": 9.50,
+    "TACO": 3.00,
+    "TORTILLA SALAD": 8.00
+    }
+   order_total = 0.0
+   while True: 
+      try:
+         item = input("ingrese un articulo de su pedido: ")  
+      except EOFError: 
+       break
+      item = item.upper()
+      if item in menu:
+       order_total += menu[item]
+       print(f"${order_total:.2f}")
+      elif item == "CONTROL-D":   
+         print(f"el total de su pedido es ${order_total:.2f}") 
+         break
+      else:
+         print("Articulo invalido")
+if __name__=="__main__":
+    main()# Comercio-de-venta
+
